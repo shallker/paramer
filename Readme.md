@@ -12,14 +12,14 @@
 
 
 ## API
-### Paramer.parse()
-### Paramer.stringify()
+#### Paramer.parse(String params)
+#### Paramer.stringify(Object params)
 
-### paramer.set()
-### paramer.del()
-### paramer.toArray()
-### paramer.build()
-### paramer.clean()
+#### paramer.set(String key, String value)
+#### paramer.del(String key)
+#### paramer.toArray()
+#### paramer.build()
+#### paramer.clean()
 
 
 ## Test
