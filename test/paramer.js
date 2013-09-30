@@ -15,16 +15,38 @@ f(test.set)
 f(test.del)
 f(test.build)
 f(test.clean)
-f(test.toArray)
+f(test.toPairs)
 f(Paramer.parse)
 f(Paramer.stringify)
 
 ok(test.set('limit', 10))
 ok(test.set('sort', 'id'))
-mc(test.toArray(), ['limit=10', 'sort=id'])
+
+mc(test.toPairs(), ['limit=10', 'sort=id'])
 eq(test.build(), 'limit=10&sort=id')
 ok(test.clean())
 eq(test.build(), '')
 
 eq(Paramer.stringify({limit: 6, sort: 'uid'}), 'limit=6&sort=uid')
 mc(Paramer.parse('limit=3&sort=id'), {limit: '3', sort: 'id'})
+
+eq(Paramer.stringify({
+  sex: 'male',
+  name: {
+    first: 'Shallker',
+    last: 'Wang'
+  }
+}), 'sex=male&name[first]=Shallker&name[last]=Wang')
+
+eq(Paramer.stringify({
+  son: {
+    Jack: {
+      name: {
+        first: 'Jack',
+        last: 'Wang'
+      }
+    }
+  }
+}), 'son[Jack][name][first]=Jack&son[Jack][name][last]=Wang')
+
+console.log('all good')
