@@ -44,6 +44,8 @@ eq(Paramer.stringify({limit: 6, sort: 'uid'}), 'limit=6&sort=uid')
 mc(Paramer.parse('limit=3&sort=id'), {limit: '3', sort: 'id'})
 ```
 
+## Todo
+- build array params recursively
 
 ## License
 
