@@ -49,4 +49,8 @@ eq(Paramer.stringify({
   }
 }), 'son[Jack][name][first]=Jack&son[Jack][name][last]=Wang')
 
-console.log('all good')
+eq(Paramer.stringify({
+  id: ['1', '2', '3']
+}), 'id=1&id=2&id=3')
+
+console.log('test done')
